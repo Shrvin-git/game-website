@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    font-family: 'Vazirmatn', sans-serif;
+    background-color: #12111A;
+    color: #fff;
+  }
+  .sidebar {
+    width: 70px;
+    height: 100vh;
+    background-color: #1C1B23;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    position: fixed;
+  }
+  .sidebar a {
+    color: #fff;
+    margin: 20px 0;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  .main {
+    margin-left: 80px;
+    padding: 20px;
+  }
+  .dashboard-header {
+    font-size: 24px;
+    font-weight: 800;
+    color: #FF5733;
+    margin-bottom: 30px;
+  }
+  .cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .card {
+    flex: 1;
+    min-width: 200px;
+    background-color: #1C1B23;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  .card h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .card span {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .table {
+    margin-top: 40px;
+    background-color: #1C1B23;
+    border-radius: 16px;
+    padding: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+  }
+  th {
+    color: #FF5733;
+  }
+  .actions button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    margin-right: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .edit-btn {
+    background-color: #FFA500;
+    color: #000;
+  }
+  .delete-btn {
+    background-color: #FF3333;
+    color: #fff;}

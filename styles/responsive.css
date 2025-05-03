@@ -1,0 +1,1400 @@
+@media (min-width: 1400px) {
+  .container {
+    width: 1250px;
+  }
+}
+
+/* =========================================================================================== */
+@media screen and (max-width: 1400px) {
+  .categori-right,
+  .categori-left {
+    width: 49%;
+  }
+
+  .categori-left_big,
+  .categori-right_big {
+    width: auto;
+  }
+
+  .categori-left_small,
+  .categori-right_small {
+    width: auto;
+    gap: 2rem;
+  }
+
+  .trend-box_items {
+    width: 21.5rem;
+  }
+  .trend-box_items_top {
+    height: 60%;
+  }
+  .trend-game_name {
+    font-size: 14px;
+  }
+  .trend-info_game {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+  .game-for_systems span {
+    width: 26.2rem;
+  }
+
+  .month-links_wrapper button {
+    width: 26rem;
+  }
+
+  .month-game {
+    width: 20%;
+  }
+
+  .month-game_active {
+    width: 35% !important;
+  }
+
+  .review_item {
+    width: 54rem;
+  }
+
+  .review_item_center {
+    width: 24rem;
+  }
+
+  .expected_item {
+    width: 21rem;
+  }
+
+  .expected_item_img {
+    height: 30rem;
+  }
+
+  .expected_item_img img {
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .expected_game_name {
+    margin-top: 1.8rem;
+  }
+
+  .filter-genre span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    padding: 7px 10px;
+    font-size: 14px;
+  }
+
+  .filter_game_item {
+    width: 20.8rem;
+  }
+
+  .filter_game {
+    row-gap: 2rem;
+  }
+
+  .blog_left,
+  .blog_right {
+    width: 49%;
+  }
+
+  .blog_img {
+    width: 26rem;
+  }
+
+  .blog_right {
+    gap: 2rem;
+  }
+
+  .blog_bottom_left,
+  .blog_bottom_right {
+    width: 49%;
+  }
+
+  .blog_bottom_left_item {
+    width: 25.8rem;
+  }
+}
+
+/* =========================================================================================== */
+@media screen and (max-width: 1200px) {
+  .header {
+    /* background-size: contain; */
+    height: 64rem;
+  }
+  .cover_game {
+    height: 178px;
+  }
+  .ul {
+    gap: 1.5rem;
+  }
+  .user-signup{
+    width: 60% !important;
+  }
+  .header_bottom_left {
+    width: 35%;
+  }
+
+  .game__title {
+    font-size: 2.6rem;
+  }
+
+  .header_bottom_right {
+    width: 62%;
+  }
+
+  .game__caption {
+    line-height: 2.1rem;
+  }
+
+  .buy_game button {
+    width: 15.5rem;
+    font-size: 1.6rem;
+  }
+
+  .game_system span {
+    width: 10rem;
+    font-size: 14px;
+  }
+
+  .backdrop__header2 {
+    background: linear-gradient(to top, #1c1b29 0%, rgba(0, 0, 0, 0.1) 30%);
+  }
+
+  .categori-right,
+  .categori-left {
+    width: 49%;
+  }
+
+  .categori-left_big,
+  .categori-right_big,
+  .categori-left_small,
+  .categori-right_small {
+    width: 100%;
+    height: 100%;
+  }
+
+  .categori-right_small,
+  .categori-left_small {
+    gap: 2rem;
+  }
+
+  .info_categori a {
+    margin-left: -7rem;
+    margin-bottom: 2rem;
+  }
+
+  .game_buy {
+    flex-direction: column;
+    row-gap: 0.5rem;
+  }
+
+  .game_percent {
+    margin-left: 0.5rem;
+  }
+
+  .trend-box_items {
+    width: 175px;
+  }
+
+  .month-left_description {
+    line-height: 21px;
+  }
+
+  .game-for_systems span,
+  .month-links_wrapper button {
+    width: 22rem;
+  }
+
+  .month-game {
+    width: 80px;
+    height: 85px;
+    object-fit: cover;
+  }
+
+  .month-game_active {
+    width: 16rem !important;
+    height: 8.5rem;
+    object-fit: cover;
+  }
+
+  .month-game {
+    width: 8.5rem;
+    height: 8.5rem;
+    object-fit: cover;
+  }
+
+  .review_item {
+    width: 100%;
+  }
+
+  .review_item_center {
+    width: 67%;
+    row-gap: 2rem;
+  }
+
+  .expected_item {
+    width: 17rem;
+    text-align: center;
+  }
+  .expected_item_img {
+    height: 22rem;
+  }
+  .expected_item_img img {
+    height: 100%;
+  }
+
+  .expected_info {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  .expected_game_name {
+    font-size: 1.4rem;
+  }
+
+  .review_head div a {
+    font-size: 15px;
+  }
+
+  .review_head div a svg {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
+  .filter-genre {
+    overflow-x: auto;
+    gap: 0.5rem;
+    font-size: 14px;
+  }
+
+  .filter-genre span {
+    padding: 0;
+    width: 10rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .select1,
+  .select2,
+  .select3 {
+    width: 27rem !important;
+    gap: 0.5rem;
+  }
+
+  .select_inputs_wrapper select {
+    width: 20rem;
+  }
+
+  .slider-container,
+  .checkBox_wrapper {
+    width: 27rem;
+  }
+
+  .range-labels {
+    font-size: 14px;
+  }
+
+  .filter_game_item {
+    width: 17.3rem;
+  }
+
+  .filter_img {
+    height: 18rem;
+  }
+
+  .filter_img img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .filter_game_info {
+    gap: 1.2rem;
+  }
+
+  .filter_game_buy {
+    flex-direction: column;
+  }
+
+  .blog_left,
+  .blog_right {
+    width: 49%;
+  }
+
+  .blog_bottom_left_item h4 {
+    font-size: 15px;
+  }
+
+  .blog_img {
+    width: 21.7rem;
+    height: 19rem;
+  }
+
+  .blog_wrapper img {
+    object-fit: cover;
+  }
+
+  .blog_right_caption p {
+    font-size: 12px;
+  }
+
+  .blog_left_caption p {
+    font-size: 16px;
+  }
+
+  .blog_bottom_left,
+  .blog_bottom_right {
+    width: 49%;
+  }
+
+  .blog_bottom_left_item {
+    width: 21.9rem;
+  }
+
+  .blog_bottom_left_items {
+    gap: 1.5rem;
+  }
+
+  /* .blog_bottom_left_items {
+        margin-bottom: 2.2rem;
+    } */
+
+  .footer_left {
+    width: 32rem;
+  }
+
+  .footer_left {
+    width: 37rem;
+  }
+
+  .footer_right {
+    width: 19rem;
+  }
+
+  .footer_left_header {
+    gap: 2rem;
+  }
+
+  .footer_left_header span {
+    font-size: 14px;
+  }
+
+  .header_bottom {
+    padding-bottom: 0;
+  }
+
+  .experiences__left img {
+    right: 185px;
+  }
+
+  .box2 {
+    left: -6px;
+  }
+
+  .experiences__left {
+    width: 60%;
+  }
+
+  .materials__wrapper {
+    flex-direction: column;
+  }
+
+  .materials__left {
+    width: 100%;
+    text-align: center;
+  }
+
+  .materials__right {
+    margin-top: 4rem;
+  }
+
+  .materials__title {
+    margin: auto;
+  }
+
+  .foooter__menu-wrapper {
+    gap: 12rem;
+  }
+}
+
+/* =========================================================================================== */
+@media screen and (max-width: 992px) {
+  .ul,
+  .login-signup {
+    display: none;
+  }
+  .user-signup{
+
+  }
+  .form{
+    width: 100%;
+  }
+  .header {
+    height: 59rem;
+    margin-top: 0;
+  }
+
+  .haburger-menu {
+    display: flex;
+  }
+
+  .serach__box {
+    width: 35rem;
+  }
+
+  .ul-md,
+  .login-signup-md {
+    display: block;
+  }
+
+  .ul-md .li_item {
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+    cursor: pointer;
+    padding: 1rem;
+    transition: all 0.3s ease-in;
+  }
+
+  .ul-md .li_item:hover {
+    background: rgba(47, 46, 53, 0.479);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  .ul-md .li_item a {
+    font-size: 1.7rem;
+  }
+
+  .login-signup-md div {
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 0.8rem;
+    transition: all 0.3s ease-in;
+  }
+
+  .main {
+    margin-top: 0;
+  }
+
+  .game__title {
+    font-size: 2.5rem;
+  }
+
+  .game__caption {
+    font-size: 14px;
+  }
+
+  .scores svg,
+  .scores img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .buy_game button {
+    width: 15rem;
+  }
+
+  .categori {
+    margin-top: 12rem;
+  }
+
+  .backdrop__header2 {
+    background: linear-gradient(to top, #1c1b29 0, rgba(0, 0, 0, 0.1) 46%);
+  }
+
+  .info_categori p {
+    font-size: 13px;
+  }
+
+  /* .trend_wrapper {
+    display: none;
+  } */
+
+  .swiper3 {
+    display: block !important;
+  }
+
+  .swiper3 .swiper-slide {
+    width: 19rem !important;
+  }
+
+  .trend-header a {
+    margin-right: 50rem;
+  }
+
+  .trend-box_items {
+    width: 168px;
+  }
+
+  .game-for_systems span,
+  .month-links_wrapper button {
+    width: 21rem;
+  }
+
+  .month-left_description {
+    line-height: 22px;
+    font-size: 14px;
+  }
+
+  .month-right {
+    justify-content: flex-start;
+  }
+  .month-game {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .month-game_active {
+    width: 15rem !important;
+  }
+
+  .month-gallery_top {
+    height: 30rem;
+  }
+
+  .month-right_wrapper {
+    margin-top: 5rem;
+  }
+
+  .month-requirments h2 {
+    font-size: 16px;
+  }
+
+  .game_recommended p span,
+  .game_minimum p span {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .game_recommended p,
+  .game_minimum p {
+    font-size: 13px;
+  }
+
+  form span {
+    font-size: 14px;
+  }
+
+  .blog_wrapper {
+    flex-direction: column;
+  }
+
+  .blog_left,
+  .blog_right {
+    width: 100%;
+  }
+
+  .blog_img {
+    flex: 1;
+  }
+
+  .blog_bottom {
+    flex-direction: column;
+  }
+
+  .blog_bottom_left_item {
+    flex: 1;
+  }
+
+  .blog_bottom_left,
+  .blog_bottom_right {
+    width: 100%;
+  }
+  .blog_bottom_right {
+    margin-top: 2rem;
+  }
+  .blog_link_wrapper {
+    width: 65%;
+    margin: auto;
+  }
+
+  /* .expected_wrapper {
+    display: none;
+  } */
+
+  .swiper5 {
+    display: block !important;
+  }
+}
+
+/* =========================================================================================== */
+@media screen and (max-width: 768px) {
+  .header_bottom,
+  .backdrop__header,
+  .backdrop__header2 {
+    display: none;
+    background-image: none !important;
+  }
+
+  .main {
+    margin-top: -15rem;
+  }
+  .user-signup{
+    width: 90% !important;
+  }
+  .header {
+    height: 52rem;
+    margin: 0;
+    position: relative;
+  }
+
+  /* .header-mobile, */
+  .header-mobile_items {
+    height: 100%;
+  }
+
+  .input-search::placeholder {
+    font-size: 1.2rem;
+  }
+
+  .swiper1 {
+    display: block !important;
+  }
+
+  .swiper4 .swiper-slide {
+    width: 36rem !important;
+  }
+
+  .review_item {
+    width: 34rem;
+  }
+
+  .review_game_caption {
+    font-size: 11px;
+    line-height: 16.75px;
+  }
+
+  .review_game_info {
+    justify-content: space-evenly;
+  }
+
+  .menu,
+  .user-basket {
+    display: none;
+  }
+
+  .btn__toggle {
+    display: flex;
+  }
+
+  .headerw__title {
+    font-size: 4.5rem;
+    line-height: 6.5rem;
+  }
+
+  .header__caption {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+  }
+
+  .serach__box {
+    max-width: 26rem;
+  }
+
+  .choose__right {
+    flex-wrap: wrap;
+    gap: 5rem;
+  }
+
+  .choos__item {
+    flex-grow: 1;
+    width: 23rem;
+  }
+
+  .experiences__left img {
+    width: 90%;
+  }
+
+  .box1,
+  .box2 {
+    width: 30rem;
+    height: 20rem;
+  }
+
+  .box1 {
+    left: 230px;
+  }
+
+  .box2 {
+    left: -2rem;
+  }
+
+  .footer__left {
+    width: 35%;
+  }
+
+  .footer__wrapper {
+    row-gap: 4rem;
+  }
+
+  .swiper2 {
+    display: block !important;
+  }
+
+  .categori {
+    .categori {
+      margin-top: 10rem;
+      margin-bottom: 10rem;
+    }
+  }
+
+  .categori-left,
+  .categori-right {
+    display: none;
+  }
+
+  .categori-mobile_md {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .active,
+  .active2 {
+    width: 28rem;
+    height: 21rem;
+  }
+
+  .swiper3 .swiper-slide {
+    width: 17rem !important;
+  }
+
+  .trend-box_items {
+    width: 148px;
+  }
+
+  .month_wrapper {
+    flex-direction: column;
+  }
+  .month-gallery_top {
+    height: 25rem;
+  }
+  .month-left,
+  .month-right {
+    width: 100%;
+  }
+
+  .game-for_systems span,
+  .month-links_wrapper button {
+    width: 25rem;
+  }
+
+  .month-game {
+    width: 100px;
+    height: 70px;
+  }
+
+  .month-requirments {
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+
+  .game_minimum,
+  .game_recommended,
+  .game_check_requirments {
+    width: 100%;
+  }
+
+  .month-requirments h2 {
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+  }
+
+  .game_recommended p span,
+  .game_minimum p span {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .game_recommended p,
+  .game_minimum p {
+    font-size: 16px;
+  }
+
+  /* .review_wrapper {
+    display: none;
+  } */
+
+  .review_item {
+    flex-direction: column;
+  }
+
+  .review_item_left,
+  .review_item_center,
+  .review_item_right {
+    width: 100%;
+  }
+
+  .game-item_info {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .review_genre span {
+    padding: 0.5rem 1rem;
+  }
+
+  .swiper4 {
+    display: block !important;
+  }
+  .filter {
+    margin-top: 23rem;
+  }
+  .filter-genre span {
+    padding: 1rem 2.5rem;
+    height: auto;
+    font-size: 12px;
+  }
+
+  .select_inputs_wrapper {
+    flex-direction: row;
+    row-gap: 0;
+    flex-wrap: wrap;
+    column-gap: 3rem;
+  }
+
+  .select1,
+  .select2,
+  .select3 {
+    width: 40% !important;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  .filter_platform,
+  .filter_publisher,
+  .Players {
+    width: 85%;
+    height: 5rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .select1 label,
+  .select2 label,
+  .select3 label,
+  .slider-container span,
+  .online_wrapper div {
+    font-size: 12px;
+  }
+
+  .input_rang_wrapper {
+    margin-top: 1rem;
+  }
+
+  .swiper5 .swiper-slide {
+    width: 19.2rem !important;
+  }
+
+  .select_inputs_wrapper select {
+    width: 85%;
+    height: 4rem;
+  }
+
+  .input_rang_wrapper {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+  .label {
+    width: 50px;
+    height: 25px;
+  }
+  .label:before {
+    width: 1.4rem;
+    height: 1.4rem;
+    left: -2.5rem;
+  }
+
+  .Search_filter_game button {
+    font-size: 1.5rem;
+  }
+  .Search_filter_game {
+    border-radius: 10px;
+  }
+  input:checked + label:before {
+    background-color: white;
+    left: 1.5em;
+  }
+  .slider-container,
+  .checkBox_wrapper {
+    width: 100%;
+  }
+
+  .slider-container div:nth-child(2) {
+    width: 70%;
+  }
+
+  .range-labels {
+    width: 100% !important;
+  }
+
+  .filter_game_item {
+    width: 16.3rem;
+    height: 35rem;
+  }
+
+  .filter-game__active {
+    display: block;
+    width: 48%;
+  }
+
+  .filter_img img {
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+
+  .filter_game_info {
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .filter_game_buy {
+    flex-direction: column;
+    row-gap: 0.6rem;
+  }
+  .filter_game_info div:nth-child(2) span {
+    font-size: 1.4rem;
+  }
+  .filter_game_info {
+    gap: 0.6rem;
+  }
+
+  .blog_wrapper {
+    display: none;
+  }
+  .box_categori span {
+    display: none;
+  }
+
+  .info_categori a {
+    margin: 0;
+  }
+  .info_categori div {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  .info_categori h4,
+  .lll h4 {
+    font-size: 1.5rem;
+  }
+  .active .span {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .active .backdrop__categori {
+    opacity: 1;
+    visibility: visible;
+  }
+  .backdrop__categori {
+    opacity: 1;
+    visibility: visible;
+  }
+  .active .info_categori {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .active2 .span2 {
+    visibility: visible;
+    opacity: 0;
+  }
+
+  .active2 .lll {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .blog_right_caption,
+  .blog_left_caption,
+  .blog_left_caption p {
+    position: static;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  .blog_left_caption p {
+    padding: 0;
+  }
+
+  .swiper6 {
+    display: block !important;
+  }
+
+  .swiper6 .swiper-slide {
+    width: 21.5rem !important;
+    /* height: 14rem !important; */
+  }
+
+  .backdrop__filter,
+  .blog_left_info,
+  .blog_right_info {
+    opacity: 1;
+    visibility: visible;
+    font-size: 12px;
+    color: #bebebe;
+  }
+
+  .blog_left_info svg,
+  .blog_right_infos svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .blog_info_right_link,
+  .blog_info_left_link {
+    display: none;
+  }
+
+  .blog_right_info div {
+    width: 100%;
+    /* justify-content: space-between; */
+  }
+
+  .blog_right_info {
+    justify-content: space-between;
+  }
+
+  .swiper6 .swiper-slide {
+    width: 28rem !important;
+    height: 23rem !important;
+  }
+
+  .blog_img {
+    width: 28rem;
+  }
+
+  .blog_bottom_left_items {
+    flex-direction: column;
+    margin-bottom: 3rem;
+  }
+
+  .blog_bottom_left_item {
+    width: 100%;
+  }
+
+  .footer_wrapper {
+    flex-direction: column;
+    row-gap: 3rem;
+  }
+
+  .footer_left,
+  .footer_center,
+  .footer_right {
+    width: 100%;
+  }
+
+  .Email,
+  .number,
+  .location {
+    justify-content: center;
+  }
+
+  .footer {
+    padding-bottom: 3rem;
+  }
+}
+
+/* =========================================================================================== */
+@media screen and (max-width: 576px) {
+  .header {
+    height: 48rem;
+  }
+
+  .main {
+    margin-top: -15rem;
+  }
+  .user-signup{
+    width: 100% !important;
+  }
+  .header-mobile_1 {
+    background-position: -40rem;
+  }
+
+  .menu-list_mobile {
+    padding: 2rem 1rem;
+  }
+
+  .ul-md .li_item {
+    padding: 0.5rem;
+  }
+
+  .logo-site {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .logo-site img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper2 .swiper-slide {
+    width: 23.5rem !important;
+    height: 14rem !important;
+  }
+
+  .active,
+  .active2 {
+    width: 22rem;
+    height: 14rem;
+  }
+
+  .trend-info_game {
+    margin: 0.5rem 0;
+  }
+
+  .swiper3 .swiper-slide {
+    width: 17rem !important;
+  }
+
+  .game_buy_right {
+    display: none;
+  }
+
+  .game-for_systems span,
+  .month-links_wrapper button {
+    width: 49%;
+  }
+
+  .month-left_title {
+    font-size: 1.6rem;
+  }
+
+  .month-left_description {
+    line-height: 21px;
+    font-size: 12px;
+  }
+
+  .choo p {
+    font-size: 16px;
+    font-weight: 500;
+    /* line-height: 3rem; */
+  }
+
+  .choo span,
+  .game-for_systems span {
+    font-size: 14px;
+  }
+
+  .game-link_review a,
+  .game-link_buy a {
+    font-size: 16px;
+  }
+
+  .month-right,
+  .month-right_wrapper {
+    margin-top: 3rem;
+  }
+
+  .month-gallery_top {
+    height: 21rem;
+  }
+
+  .percent_game {
+    display: none;
+  }
+  .filter_game_item {
+    width: 14.3rem;
+  }
+  .month-game {
+    width: 20%;
+    height: 7.5rem;
+  }
+
+  .month-game_active {
+    width: 35% !important;
+  }
+
+  .month-requirments h2 {
+    font-size: 16px;
+  }
+
+  .swiper4 .swiper-slide {
+    width: 33rem !important;
+  }
+
+  .review_item {
+    width: 31rem;
+  }
+
+  .filter_game_name {
+    font-size: 11px;
+  }
+
+  .filter_game_buy {
+    font-size: 13px;
+  }
+  .filter-genre {
+    margin-top: 2rem;
+  }
+  .input_search {
+    padding: 8px 12px;
+  }
+  #input_search::placeholder {
+    font-size: 14px;
+  }
+  .game_recommended p span,
+  .game_minimum p span {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .review_head h2 {
+    font-size: 2rem;
+  }
+
+  .game_recommended p,
+  .game_minimum p {
+    font-size: 14px;
+  }
+
+  form span {
+    margin-bottom: 2px;
+  }
+
+  .ram_check,
+  .gpu_check,
+  .cpu_check {
+    margin-bottom: 2rem;
+  }
+
+  .ram_check input,
+  .gpu_check input,
+  .cpu_check input {
+    padding: 1.2rem 4rem;
+  }
+  .expected_item_img {
+    height: 18rem;
+  }
+  .expected_item {
+    width: 49%;
+  }
+
+  .swiper5 .swiper-slide {
+    width: 17.2rem !important;
+  }
+
+  .expected_item {
+    width: 15.2rem;
+  }
+
+  .swiper6 .swiper-slide {
+    width: 25rem !important;
+    /* height: 16rem !important; */
+  }
+
+  .blog_img {
+    width: 25rem;
+    height: 16rem;
+  }
+
+  .blog_link_wrapper,
+  .form {
+    width: 100%;
+  }
+
+  .email {
+    margin-bottom: 0;
+  }
+
+  .input_name,
+  .input_email {
+    height: 4.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .heaedr_accordion span:first-child {
+    font-size: 15px;
+  }
+
+  .google {
+    padding: 0.8rem;
+  }
+
+  .month-slide,
+  .slider_arrow,
+  .review_slider,
+  .trend_arrow {
+    display: none;
+  }
+
+  .review_head div:nth-child(1) {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .trend-header a {
+    margin: 0;
+    font-size: 15px;
+  }
+
+  .trend-header svg {
+    width: 1.3rem;
+    height: 1.3rm;
+  }
+}
+
+/* =========================================================================================== */
+@media screen and (max-width: 470px) {
+  .serach__box {
+    max-width: 22rem;
+  }
+  #auth-box-wrapper{
+    width: 100%;
+  }
+  .blog_bottom_left h3 {
+    font-size: 1.6rem;
+  }
+
+  .blog_bottom_left_caption {
+    font-size: 13px;
+  }
+
+  .swiper4 .swiper-slide {
+    width: 31rem !important;
+  }
+
+  .review_item {
+    width: 29rem;
+  }
+  .expected_game_name {
+    font-size: 1.3rem;
+  }
+
+  .filter_game_item {
+    flex-grow: 1;
+  }
+  .filter_game {
+    gap: 1rem;
+  }
+  .filter_game_info,
+  .filter_game_buy {
+    flex-direction: row;
+  }
+  .filter_game_item {
+    height: 29rem;
+  }
+  .relese-games-filtred {
+    font-size: 10px;
+  }
+  .filter_img img {
+    object-fit: initial;
+  }
+}
+
+/* =========================================================================================== */
+@media screen and (max-width: 400px) {
+  .headerw__title {
+    font-size: 2.5rem;
+    line-height: 4.5rem;
+  }
+
+  .chose__title {
+    font-size: 3.2rem;
+  }
+}

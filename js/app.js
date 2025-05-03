@@ -1,0 +1,353 @@
+const slider = document.getElementById('release-slider');
+const slider2 = document.getElementById('rating-slider');
+const currentValue = document.getElementById('current-value');
+const currentValue2 = document.getElementById('current-value2');
+const gameName = document.querySelector('.game__title')
+const gameCaption = document.querySelector('.game__caption')
+const gameScore = document.querySelector('.zard')
+const gameSince = document.querySelector('.game__since')
+const headerStyles = document.querySelector('.header')
+const getHeaderStyles = getComputedStyle(headerStyles)
+const headerAccordion = document.querySelectorAll('.heaedr_accordion')
+const faqBoxElem = document.querySelectorAll('.faq__item')
+const coverGame = document.querySelectorAll('.hero_cover_game')
+const arrowUpElem = document.querySelector('.show_svg')
+const header = document.querySelector('.header')
+const menuMobileBtn = document.querySelector('.haburger-menu')
+const ddd = document.querySelector('.hamburger-menu_toggle')
+const scroll = document.querySelector('.scroll')
+const boxes = document.querySelectorAll('.blog_bottom_left_item');
+const genresElem = document.querySelectorAll('.genres')
+const SearchFilterGameBtn = document.querySelector('.Search_filter_game')
+const releaseSliderElem = document.querySelector('#release-slider')
+const ratingSliderElem = document.querySelector('#rating-slider')
+const filterGameWrapper = document.querySelector('#filter_game')
+const monthGamesElem = document.querySelectorAll('.month-game')
+const boxCategoriesElem = document.querySelectorAll('.backdrop__categori')
+const preloader = document.querySelector('.game-loader')
+const signUp = document.querySelector('.sign_up')
+const logIn = document.querySelector('.log_in')
+const userAuthWrapper = document.querySelector('#auth-box-wrapper')
+const backdropBlurElem = document.querySelector('.backdrop-blur')
+
+
+let percent = 0;
+const percentText = document.getElementById('percentage');
+const loader = document.getElementById('loader');
+const mainContent = document.getElementById('main-content');
+const beepSound = document.getElementById('beep-sound');
+
+// * The Pre Loader Site
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        preloader.classList.add('game-loader_efect')
+    }, 1500);
+})
+
+
+
+
+
+
+
+
+
+const supabaseURL = "https://scrwqyyvidqahgzmhqwu.supabase.co/rest/v1/All Games";
+const supabaseApiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNjcndxeXl2aWRxYWhnem1ocXd1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ5NzIzMzksImV4cCI6MjA2MDU0ODMzOX0.AHUoQPSQ2K2sIUfqCuVui8_4CG84Tcv315AjYbINPj0";
+
+
+let parentImg;
+let coverGameElem = getHeaderStyles.backgroundImage
+let searchLogo = document.querySelector('.logo-search')
+let searchInput = document.querySelector('.input-search')
+let mobileMenuList = document.querySelector('.menu-list_mobile')
+
+let infoGamesArray = [
+    { id: 1, title: 'The Witcher 3', description: 'The Witcher 3: Wild Hunt" is an open-world RPG where players follow Geralt of Rivia, a monster hunter, in his quest to find his adopted daughter, Ciri. Set in a richly detailed and expansive world, the game offers a deep narrative and complex choices that affect the games outcome.', score: '93/', since: 'May 19, 2015,', img: 'img/Hero.jpg', genre: 'Action RPG' },
+
+
+    { id: 2, title: 'Red Dead Redemtion II', description: 'In this open-world action-adventure game, players control Arthur Morgan, an outlaw navigating the downfall of the Wild West. Set in a vast, immersive world, the game follows Arthur’s struggles with loyalty, survival, and morality as his gang faces opposition from law enforcement.', score: '97/', since: 'Oct 26, 2018', img: 'img/RDRcover.jfif', genre: 'Action Advanture' },
+
+
+    { id: 3, title: 'The Last Of Us II', description: 'The Last of Us Part II continues the emotional journey of Ellie, now older and seeking revenge. Set in a post-apocalyptic world, the game combines stealth and action, forcing players to confront moral dilemmas and the harsh consequences of violence.', score: '93/', since: 'Jun 19, 2020', img: 'img/TLOU2.jfif', genre: 'Action Advanture' },
+
+
+
+
+
+    { id: 4, title: 'Battlefield V', description: 'Enter mankinds greatest conflict with Battlefield™ V as the series goes back to its roots in a never-before-seen portrayal of World War 2. Take on immersive, all-out multiplayer with your squad in experiences like the vast Grand Operations and the cooperative', score: '83/', since: 'Nov, 20, 2018', img: 'img/wp3811500-battlefield-v-4k-wallpapers.png', genre: 'Action Shooter' },
+
+
+    { id: 5, title: 'God Of War: Ragnorag', description: 'In this soft reboot, Kratos embarks on a journey with his son Atreus in the world of Norse mythology. Combining intense combat with a rich narrative, the game explores themes of fatherhood, redemption, and the gods’ power over fate. the game explores themes of fatherhood', score: '94/', since: 'Apr 20, 2018', img: 'img/GOW.jpg', genre: '' }
+]
+
+
+
+coverGame.forEach(function (games) {
+
+    games.addEventListener('click', function (event) {
+        coverGame.forEach(function (removeClass) {
+            removeClass.classList.remove('class_coverGame_active')
+        })
+        event.target.classList.add('class_coverGame_active')
+    })
+    games.addEventListener('click', function (event) {
+
+
+        let idImage = event.target.dataset.id
+        let isInArrayGames = infoGamesArray.find(function (replace) {
+            return replace.id == idImage
+        })
+
+
+        gameName.classList.add('game__info--hidden')
+        gameCaption.classList.add('game__info--hidden')
+        gameScore.classList.add('game__info--hidden')
+        gameSince.classList.add('game__info--hidden')
+        setTimeout(function () {
+            gameName.innerHTML = isInArrayGames.title
+            gameName.classList.remove('game__info--hidden')
+
+            gameCaption.innerHTML = isInArrayGames.description
+            gameCaption.classList.remove('game__info--hidden')
+
+            gameScore.innerHTML = isInArrayGames.score
+            gameScore.classList.remove('game__info--hidden')
+
+            gameSince.innerHTML = isInArrayGames.since
+            gameSince.classList.remove('game__info--hidden')
+        }, 600)
+        header.style.backgroundImage = `url(${isInArrayGames.img})`
+
+    })
+})
+faqBoxElem.forEach(function (boxes) {
+    boxes.addEventListener('click', function (event) {
+
+        const isActive = boxes.classList.contains('faq__item__active')
+
+        faqBoxElem.forEach(function (items) {
+            items.classList.remove('faq__item__active')
+        })
+
+        if (!isActive) {
+            boxes.classList.toggle('faq__item__active')
+        }
+
+
+    })
+})
+
+
+
+
+//* Scroler Website
+window.addEventListener('scroll', function () {
+    let scrollTop = this.window.scrollY
+    let documentHeight = this.document.body.clientHeight
+    let windowHeight = this.window.innerHeight
+
+    let scrollPercent = scrollTop / (documentHeight - windowHeight)
+    let scrollPercentRound = Math.round(scrollPercent * 100)
+
+    scroll.style.width = scrollPercentRound + '%'
+})
+searchLogo.addEventListener('click', function () {
+    searchInput.classList.toggle('input-search--toggle')
+})
+menuMobileBtn.addEventListener('click', function () {
+    menuMobileBtn.classList.toggle('haburger-menu--sss')
+    ddd.classList.toggle('hamburger-menu_toggle--close')
+    mobileMenuList.classList.toggle('menu-list_mobile--open')
+})
+
+
+
+
+//* Request to Server And Get All Games
+const filtredGames = async () => {
+    const response = await fetch(supabaseURL, {
+        method: "GET",
+        headers: {
+            apikey: supabaseApiKey,
+            Authorization: `Bearer ${supabaseApiKey}`,
+        },
+    })
+        .then(res => res.json())
+        .then(data => searchByFilters(data))
+}
+
+
+
+
+// * Search Games By Filters
+let releaseGame = ''
+let ratingGame = ''
+genresElem.forEach(items => {
+    items.addEventListener('click', (e) => {
+        genresElem.forEach(items => {
+            items.classList.remove('genres-active')
+        })
+        e.target.classList.add('genres-active')
+
+    })
+});
+releaseSliderElem.addEventListener('input', (e) => {
+    currentValue.textContent = e.target.value;
+    releaseGame = e.target.value
+})
+ratingSliderElem.addEventListener('input', (e) => {
+    currentValue2.innerHTML = e.target.value;
+    ratingGame = e.target.value
+})
+monthGamesElem.forEach(items => {
+
+    items.addEventListener('click', (e) => {
+        monthGamesElem.forEach(element => {
+            element.classList.remove('month-game_active')
+        });
+        e.target.classList.add('month-game_active')
+        document.querySelector('#cover-month-game').src = e.target.src
+    })
+
+})
+const searchByFilters = (data) => {
+    const gameGenre = document.querySelector('.genres-active')?.innerHTML
+    const inputSearchValue = document.querySelector('#input_search').value
+    const platformsElem = document.querySelector('.platforms').value;
+
+    const filteredGames = data.filter((games) => {
+
+        return (!releaseGame || games.release.slice(0, 4) < +releaseGame) &&
+            (!ratingGame || games.score <= +ratingGame) &&
+            (!gameGenre || games.genre === gameGenre) &&
+            (!inputSearchValue || games.title.toLowerCase().includes(inputSearchValue.toLowerCase())) &&
+            (!platformsElem || games.platforms.includes(platformsElem))
+
+    })
+
+    console.log(filteredGames);
+    filterGameWrapper.innerHTML = ''
+
+
+    if (filteredGames.length === 0) {
+        filterGameWrapper.insertAdjacentHTML('beforeend',
+            `
+                   <div id="search-result__wrapper">
+                         <h3 id="search-result"> Game is Not Found :( </h3>
+                   </div>
+                `
+        )
+    } else {
+        filteredGames.forEach(items => {
+            filterGameWrapper.insertAdjacentHTML('beforeend',
+                `
+                    <div class="filter_game_item">
+                          <div class="filter_img">
+                            <img src="${items.coverimg}" alt="">
+                          </div>
+            
+                          <h3 class="filter_game_name">${items.title}</h3>
+                          <div class="filter_game_info">
+                            <div>
+                              <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.673 0.5C5.85865 0.5 6.0367 0.57375 6.16797 0.705025C6.29925 0.836301 6.373 1.01435 6.373 1.2V2.509H13.89V1.209C13.89 1.02335 13.9637 0.845301 14.095 0.714025C14.2263 0.58275 14.4043 0.509 14.59 0.509C14.7757 0.509 14.9537 0.58275 15.085 0.714025C15.2162 0.845301 15.29 1.02335 15.29 1.209V2.509H18C18.5303 2.509 19.0388 2.71958 19.4139 3.09443C19.7889 3.46929 19.9997 3.97774 20 4.508V18.501C19.9997 19.0313 19.7889 19.5397 19.4139 19.9146C19.0388 20.2894 18.5303 20.5 18 20.5H2C1.46974 20.5 0.961184 20.2894 0.58614 19.9146C0.211096 19.5397 0.00026513 19.0313 0 18.501L0 4.508C0.00026513 3.97774 0.211096 3.46929 0.58614 3.09443C0.961184 2.71958 1.46974 2.509 2 2.509H4.973V1.199C4.97327 1.01352 5.04713 0.835731 5.17838 0.704672C5.30963 0.573612 5.48752 0.5 5.673 0.5ZM1.4 8.242V18.501C1.4 18.5798 1.41552 18.6578 1.44567 18.7306C1.47583 18.8034 1.52002 18.8695 1.57574 18.9253C1.63145 18.981 1.69759 19.0252 1.77039 19.0553C1.84319 19.0855 1.92121 19.101 2 19.101H18C18.0788 19.101 18.1568 19.0855 18.2296 19.0553C18.3024 19.0252 18.3685 18.981 18.4243 18.9253C18.48 18.8695 18.5242 18.8034 18.5543 18.7306C18.5845 18.6578 18.6 18.5798 18.6 18.501V8.256L1.4 8.242ZM6.667 15.119V16.785H5V15.119H6.667ZM10.833 15.119V16.785H9.167V15.119H10.833ZM15 15.119V16.785H13.333V15.119H15ZM6.667 11.142V12.808H5V11.142H6.667ZM10.833 11.142V12.808H9.167V11.142H10.833ZM15 11.142V12.808H13.333V11.142H15ZM4.973 3.908H2C1.92121 3.908 1.84319 3.92352 1.77039 3.95367C1.69759 3.98382 1.63145 4.02802 1.57574 4.08374C1.52002 4.13945 1.47583 4.20559 1.44567 4.27839C1.41552 4.35119 1.4 4.42921 1.4 4.508V6.843L18.6 6.857V4.508C18.6 4.42921 18.5845 4.35119 18.5543 4.27839C18.5242 4.20559 18.48 4.13945 18.4243 4.08374C18.3685 4.02802 18.3024 3.98382 18.2296 3.95367C18.1568 3.92352 18.0788 3.908 18 3.908H15.29V4.837C15.29 5.02265 15.2162 5.2007 15.085 5.33197C14.9537 5.46325 14.7757 5.537 14.59 5.537C14.4043 5.537 14.2263 5.46325 14.095 5.33197C13.9637 5.2007 13.89 5.02265 13.89 4.837V3.908H6.373V4.828C6.373 5.01365 6.29925 5.1917 6.16797 5.32297C6.0367 5.45425 5.85865 5.528 5.673 5.528C5.48735 5.528 5.3093 5.45425 5.17803 5.32297C5.04675 5.1917 4.973 5.01365 4.973 4.828V3.908Z" fill="white"></path>
+                              </svg>
+                              <span class="relese-games-filtred">${items.release}</span>
+                            </div>
+            
+                            <div>
+                              <img class="meta" src="img/simple-icons_metacritic.png" alt="">
+                              <p><span>${items.score}</span>/100</p>
+                            </div>
+                          </div>
+            
+                          <div class="filter_game_buy">
+                            <div class="nmt">
+                              <del class="del">60$</del>
+                              <span class="new_price">42<span>$</span></span>
+                              <span class="percent_game">30%</span>
+                            </div>
+            
+                            <div class="buy_game_filter">
+                              <a href="#">
+                                Buy Now
+                                <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M15.5535 4.85355C15.7488 4.65829 15.7488 4.34171 15.5535 4.14645L12.3716 0.964466C12.1763 0.769204 11.8597 0.769204 11.6644 0.964466C11.4692 1.15973 11.4692 1.47631 11.6644 1.67157L14.4929 4.5L11.6644 7.32843C11.4692 7.52369 11.4692 7.84027 11.6644 8.03553C11.8597 8.2308 12.1763 8.2308 12.3716 8.03553L15.5535 4.85355ZM0.199982 5H15.2V4H0.199982V5Z" fill="#FF5733"></path>
+                                </svg>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                    `
+            )
+        })
+        console.log('Thats Good :)');
+    }
+}
+
+
+
+// * Categories
+boxCategoriesElem.forEach(boxes => {
+
+    boxes.addEventListener('click', (e) => {
+        console.log(e.target.dataset.cat);
+        goToCategory(e)
+    })
+
+})
+function goToCategory(e) {
+    const datasetCategory = e.target.dataset.cat
+
+    window.location.href = `./category/index.html?cat=${datasetCategory}`;
+}
+
+
+const athenticationOnThSite = (e) => {
+    userAuthWrapper.style.opacity = 1
+    userAuthWrapper.style.visibility = 'visible'
+}
+
+
+
+
+SearchFilterGameBtn.addEventListener('click', filtredGames)
+window.addEventListener('keypress', (event) => {
+    if (event.code === 'Enter') {
+        filtredGames()
+    }
+})
+
+
+signUp.addEventListener('click', athenticationOnThSite)
+logIn.addEventListener('click', athenticationOnThSite)
+
+
+
+
+document.querySelectorAll('.input_password').forEach(wrapper => {
+    const input = wrapper.querySelector('input');
+    const hideIcon = wrapper.querySelector('.hide-password-eye');
+    const showIcon = wrapper.querySelector('.show-password-eye');
+
+    hideIcon.addEventListener('click', () => {
+        input.type = 'text';
+        hideIcon.style.display = 'none';
+        showIcon.style.display = 'block';
+    });
+
+    showIcon.addEventListener('click', () => {
+        input.type = 'password';
+        showIcon.style.display = 'none';
+        hideIcon.style.display = 'block';
+    });
+});
+backdropBlurElem.addEventListener('click', () => {
+    document.getElementById('auth-box-wrapper').style.opacity = 0
+    document.getElementById('auth-box-wrapper').style.visibility = 'hidden'
+})
+
+document.querySelector('.login-btn').addEventListener('click',()=>{
+    athenticationOnThSite()
+})
