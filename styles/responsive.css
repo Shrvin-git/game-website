@@ -128,7 +128,7 @@
   .ul {
     gap: 1.5rem;
   }
-  .user-signup{
+  .user-signup {
     width: 60% !important;
   }
   .header_bottom_left {
@@ -425,10 +425,9 @@
   .login-signup {
     display: none;
   }
-  .user-signup{
-
+  .user-signup {
   }
-  .form{
+  .form {
     width: 100%;
   }
   .header {
@@ -631,7 +630,7 @@
   .main {
     margin-top: -15rem;
   }
-  .user-signup{
+  .user-signup {
     width: 90% !important;
   }
   .header {
@@ -1108,7 +1107,7 @@
   .main {
     margin-top: -15rem;
   }
-  .user-signup{
+  .user-signup {
     width: 100% !important;
   }
   .header-mobile_1 {
@@ -1344,13 +1343,24 @@
   .serach__box {
     max-width: 22rem;
   }
-  #auth-box-wrapper{
-    width: 100%;
+  #auth-box-wrapper {
+    width: 90%;
   }
   .blog_bottom_left h3 {
     font-size: 1.6rem;
   }
-
+  button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    border-radius: 1.5rem;
+  }
+  .google {
+    padding: 0.6rem;
+  }
+  .email {
+    font-size: 1.4rem;
+  }
   .blog_bottom_left_caption {
     font-size: 13px;
   }

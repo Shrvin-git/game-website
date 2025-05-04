@@ -28,7 +28,7 @@ const preloader = document.querySelector('.game-loader')
 const signUp = document.querySelector('.sign_up')
 const logIn = document.querySelector('.log_in')
 const userAuthWrapper = document.querySelector('#auth-box-wrapper')
-const backdropBlurElem = document.querySelector('.backdrop-blur')
+
 
 
 let percent = 0;
@@ -39,9 +39,9 @@ const beepSound = document.getElementById('beep-sound');
 
 // * The Pre Loader Site
 window.addEventListener('load', () => {
-    setTimeout(() => {
-        preloader.classList.add('game-loader_efect')
-    }, 1500);
+
+  preloader.classList.add('game-loader_efect')
+
 })
 
 
@@ -63,79 +63,79 @@ let searchInput = document.querySelector('.input-search')
 let mobileMenuList = document.querySelector('.menu-list_mobile')
 
 let infoGamesArray = [
-    { id: 1, title: 'The Witcher 3', description: 'The Witcher 3: Wild Hunt" is an open-world RPG where players follow Geralt of Rivia, a monster hunter, in his quest to find his adopted daughter, Ciri. Set in a richly detailed and expansive world, the game offers a deep narrative and complex choices that affect the games outcome.', score: '93/', since: 'May 19, 2015,', img: 'img/Hero.jpg', genre: 'Action RPG' },
+  { id: 1, title: 'The Witcher 3', description: 'The Witcher 3: Wild Hunt" is an open-world RPG where players follow Geralt of Rivia, a monster hunter, in his quest to find his adopted daughter, Ciri. Set in a richly detailed and expansive world, the game offers a deep narrative and complex choices that affect the games outcome.', score: '93/', since: 'May 19, 2015,', img: 'img/Hero.jpg', genre: 'Action RPG' },
 
 
-    { id: 2, title: 'Red Dead Redemtion II', description: 'In this open-world action-adventure game, players control Arthur Morgan, an outlaw navigating the downfall of the Wild West. Set in a vast, immersive world, the game follows Arthur’s struggles with loyalty, survival, and morality as his gang faces opposition from law enforcement.', score: '97/', since: 'Oct 26, 2018', img: 'img/RDRcover.jfif', genre: 'Action Advanture' },
+  { id: 2, title: 'Red Dead Redemtion II', description: 'In this open-world action-adventure game, players control Arthur Morgan, an outlaw navigating the downfall of the Wild West. Set in a vast, immersive world, the game follows Arthur’s struggles with loyalty, survival, and morality as his gang faces opposition from law enforcement.', score: '97/', since: 'Oct 26, 2018', img: 'img/RDRcover.jfif', genre: 'Action Advanture' },
 
 
-    { id: 3, title: 'The Last Of Us II', description: 'The Last of Us Part II continues the emotional journey of Ellie, now older and seeking revenge. Set in a post-apocalyptic world, the game combines stealth and action, forcing players to confront moral dilemmas and the harsh consequences of violence.', score: '93/', since: 'Jun 19, 2020', img: 'img/TLOU2.jfif', genre: 'Action Advanture' },
+  { id: 3, title: 'The Last Of Us II', description: 'The Last of Us Part II continues the emotional journey of Ellie, now older and seeking revenge. Set in a post-apocalyptic world, the game combines stealth and action, forcing players to confront moral dilemmas and the harsh consequences of violence.', score: '93/', since: 'Jun 19, 2020', img: 'img/TLOU2.jfif', genre: 'Action Advanture' },
 
 
 
 
 
-    { id: 4, title: 'Battlefield V', description: 'Enter mankinds greatest conflict with Battlefield™ V as the series goes back to its roots in a never-before-seen portrayal of World War 2. Take on immersive, all-out multiplayer with your squad in experiences like the vast Grand Operations and the cooperative', score: '83/', since: 'Nov, 20, 2018', img: 'img/wp3811500-battlefield-v-4k-wallpapers.png', genre: 'Action Shooter' },
+  { id: 4, title: 'Battlefield V', description: 'Enter mankinds greatest conflict with Battlefield™ V as the series goes back to its roots in a never-before-seen portrayal of World War 2. Take on immersive, all-out multiplayer with your squad in experiences like the vast Grand Operations and the cooperative', score: '83/', since: 'Nov, 20, 2018', img: 'img/wp3811500-battlefield-v-4k-wallpapers.png', genre: 'Action Shooter' },
 
 
-    { id: 5, title: 'God Of War: Ragnorag', description: 'In this soft reboot, Kratos embarks on a journey with his son Atreus in the world of Norse mythology. Combining intense combat with a rich narrative, the game explores themes of fatherhood, redemption, and the gods’ power over fate. the game explores themes of fatherhood', score: '94/', since: 'Apr 20, 2018', img: 'img/GOW.jpg', genre: '' }
+  { id: 5, title: 'God Of War: Ragnorag', description: 'In this soft reboot, Kratos embarks on a journey with his son Atreus in the world of Norse mythology. Combining intense combat with a rich narrative, the game explores themes of fatherhood, redemption, and the gods’ power over fate. the game explores themes of fatherhood', score: '94/', since: 'Apr 20, 2018', img: 'img/GOW.jpg', genre: '' }
 ]
 
 
 
 coverGame.forEach(function (games) {
 
-    games.addEventListener('click', function (event) {
-        coverGame.forEach(function (removeClass) {
-            removeClass.classList.remove('class_coverGame_active')
-        })
-        event.target.classList.add('class_coverGame_active')
+  games.addEventListener('click', function (event) {
+    coverGame.forEach(function (removeClass) {
+      removeClass.classList.remove('class_coverGame_active')
     })
-    games.addEventListener('click', function (event) {
+    event.target.classList.add('class_coverGame_active')
+  })
+  games.addEventListener('click', function (event) {
 
 
-        let idImage = event.target.dataset.id
-        let isInArrayGames = infoGamesArray.find(function (replace) {
-            return replace.id == idImage
-        })
-
-
-        gameName.classList.add('game__info--hidden')
-        gameCaption.classList.add('game__info--hidden')
-        gameScore.classList.add('game__info--hidden')
-        gameSince.classList.add('game__info--hidden')
-        setTimeout(function () {
-            gameName.innerHTML = isInArrayGames.title
-            gameName.classList.remove('game__info--hidden')
-
-            gameCaption.innerHTML = isInArrayGames.description
-            gameCaption.classList.remove('game__info--hidden')
-
-            gameScore.innerHTML = isInArrayGames.score
-            gameScore.classList.remove('game__info--hidden')
-
-            gameSince.innerHTML = isInArrayGames.since
-            gameSince.classList.remove('game__info--hidden')
-        }, 600)
-        header.style.backgroundImage = `url(${isInArrayGames.img})`
-
+    let idImage = event.target.dataset.id
+    let isInArrayGames = infoGamesArray.find(function (replace) {
+      return replace.id == idImage
     })
+
+
+    gameName.classList.add('game__info--hidden')
+    gameCaption.classList.add('game__info--hidden')
+    gameScore.classList.add('game__info--hidden')
+    gameSince.classList.add('game__info--hidden')
+    setTimeout(function () {
+      gameName.innerHTML = isInArrayGames.title
+      gameName.classList.remove('game__info--hidden')
+
+      gameCaption.innerHTML = isInArrayGames.description
+      gameCaption.classList.remove('game__info--hidden')
+
+      gameScore.innerHTML = isInArrayGames.score
+      gameScore.classList.remove('game__info--hidden')
+
+      gameSince.innerHTML = isInArrayGames.since
+      gameSince.classList.remove('game__info--hidden')
+    }, 600)
+    header.style.backgroundImage = `url(${isInArrayGames.img})`
+
+  })
 })
 faqBoxElem.forEach(function (boxes) {
-    boxes.addEventListener('click', function (event) {
+  boxes.addEventListener('click', function (event) {
 
-        const isActive = boxes.classList.contains('faq__item__active')
+    const isActive = boxes.classList.contains('faq__item__active')
 
-        faqBoxElem.forEach(function (items) {
-            items.classList.remove('faq__item__active')
-        })
-
-        if (!isActive) {
-            boxes.classList.toggle('faq__item__active')
-        }
-
-
+    faqBoxElem.forEach(function (items) {
+      items.classList.remove('faq__item__active')
     })
+
+    if (!isActive) {
+      boxes.classList.toggle('faq__item__active')
+    }
+
+
+  })
 })
 
 
@@ -143,22 +143,22 @@ faqBoxElem.forEach(function (boxes) {
 
 //* Scroler Website
 window.addEventListener('scroll', function () {
-    let scrollTop = this.window.scrollY
-    let documentHeight = this.document.body.clientHeight
-    let windowHeight = this.window.innerHeight
+  let scrollTop = this.window.scrollY
+  let documentHeight = this.document.body.clientHeight
+  let windowHeight = this.window.innerHeight
 
-    let scrollPercent = scrollTop / (documentHeight - windowHeight)
-    let scrollPercentRound = Math.round(scrollPercent * 100)
+  let scrollPercent = scrollTop / (documentHeight - windowHeight)
+  let scrollPercentRound = Math.round(scrollPercent * 100)
 
-    scroll.style.width = scrollPercentRound + '%'
+  scroll.style.width = scrollPercentRound + '%'
 })
 searchLogo.addEventListener('click', function () {
-    searchInput.classList.toggle('input-search--toggle')
+  searchInput.classList.toggle('input-search--toggle')
 })
 menuMobileBtn.addEventListener('click', function () {
-    menuMobileBtn.classList.toggle('haburger-menu--sss')
-    ddd.classList.toggle('hamburger-menu_toggle--close')
-    mobileMenuList.classList.toggle('menu-list_mobile--open')
+  menuMobileBtn.classList.toggle('haburger-menu--sss')
+  ddd.classList.toggle('hamburger-menu_toggle--close')
+  mobileMenuList.classList.toggle('menu-list_mobile--open')
 })
 
 
@@ -166,15 +166,15 @@ menuMobileBtn.addEventListener('click', function () {
 
 //* Request to Server And Get All Games
 const filtredGames = async () => {
-    const response = await fetch(supabaseURL, {
-        method: "GET",
-        headers: {
-            apikey: supabaseApiKey,
-            Authorization: `Bearer ${supabaseApiKey}`,
-        },
-    })
-        .then(res => res.json())
-        .then(data => searchByFilters(data))
+  const response = await fetch(supabaseURL, {
+    method: "GET",
+    headers: {
+      apikey: supabaseApiKey,
+      Authorization: `Bearer ${supabaseApiKey}`,
+    },
+  })
+    .then(res => res.json())
+    .then(data => searchByFilters(data))
 }
 
 
@@ -184,64 +184,64 @@ const filtredGames = async () => {
 let releaseGame = ''
 let ratingGame = ''
 genresElem.forEach(items => {
-    items.addEventListener('click', (e) => {
-        genresElem.forEach(items => {
-            items.classList.remove('genres-active')
-        })
-        e.target.classList.add('genres-active')
-
+  items.addEventListener('click', (e) => {
+    genresElem.forEach(items => {
+      items.classList.remove('genres-active')
     })
+    e.target.classList.add('genres-active')
+
+  })
 });
 releaseSliderElem.addEventListener('input', (e) => {
-    currentValue.textContent = e.target.value;
-    releaseGame = e.target.value
+  currentValue.textContent = e.target.value;
+  releaseGame = e.target.value
 })
 ratingSliderElem.addEventListener('input', (e) => {
-    currentValue2.innerHTML = e.target.value;
-    ratingGame = e.target.value
+  currentValue2.innerHTML = e.target.value;
+  ratingGame = e.target.value
 })
 monthGamesElem.forEach(items => {
 
-    items.addEventListener('click', (e) => {
-        monthGamesElem.forEach(element => {
-            element.classList.remove('month-game_active')
-        });
-        e.target.classList.add('month-game_active')
-        document.querySelector('#cover-month-game').src = e.target.src
-    })
+  items.addEventListener('click', (e) => {
+    monthGamesElem.forEach(element => {
+      element.classList.remove('month-game_active')
+    });
+    e.target.classList.add('month-game_active')
+    document.querySelector('#cover-month-game').src = e.target.src
+  })
 
 })
 const searchByFilters = (data) => {
-    const gameGenre = document.querySelector('.genres-active')?.innerHTML
-    const inputSearchValue = document.querySelector('#input_search').value
-    const platformsElem = document.querySelector('.platforms').value;
+  const gameGenre = document.querySelector('.genres-active')?.innerHTML
+  const inputSearchValue = document.querySelector('#input_search').value
+  const platformsElem = document.querySelector('.platforms').value;
 
-    const filteredGames = data.filter((games) => {
+  const filteredGames = data.filter((games) => {
 
-        return (!releaseGame || games.release.slice(0, 4) < +releaseGame) &&
-            (!ratingGame || games.score <= +ratingGame) &&
-            (!gameGenre || games.genre === gameGenre) &&
-            (!inputSearchValue || games.title.toLowerCase().includes(inputSearchValue.toLowerCase())) &&
-            (!platformsElem || games.platforms.includes(platformsElem))
+    return (!releaseGame || games.release.slice(0, 4) < +releaseGame) &&
+      (!ratingGame || games.score <= +ratingGame) &&
+      (!gameGenre || games.genre === gameGenre) &&
+      (!inputSearchValue || games.title.toLowerCase().includes(inputSearchValue.toLowerCase())) &&
+      (!platformsElem || games.platforms.includes(platformsElem))
 
-    })
+  })
 
-    console.log(filteredGames);
-    filterGameWrapper.innerHTML = ''
+  console.log(filteredGames);
+  filterGameWrapper.innerHTML = ''
 
 
-    if (filteredGames.length === 0) {
-        filterGameWrapper.insertAdjacentHTML('beforeend',
-            `
+  if (filteredGames.length === 0) {
+    filterGameWrapper.insertAdjacentHTML('beforeend',
+      `
                    <div id="search-result__wrapper">
                          <h3 id="search-result"> Game is Not Found :( </h3>
                    </div>
                 `
-        )
-    } else {
-        filteredGames.forEach(items => {
-            filterGameWrapper.insertAdjacentHTML('beforeend',
-                `
+    )
+  } else {
+    filteredGames.forEach(items => {
+      filterGameWrapper.insertAdjacentHTML('beforeend',
+        `
                     <div class="filter_game_item">
                           <div class="filter_img">
                             <img src="${items.coverimg}" alt="">
@@ -280,10 +280,10 @@ const searchByFilters = (data) => {
                           </div>
                         </div>
                     `
-            )
-        })
-        console.log('Thats Good :)');
-    }
+      )
+    })
+    console.log('Thats Good :)');
+  }
 }
 
 
@@ -291,63 +291,258 @@ const searchByFilters = (data) => {
 // * Categories
 boxCategoriesElem.forEach(boxes => {
 
-    boxes.addEventListener('click', (e) => {
-        console.log(e.target.dataset.cat);
-        goToCategory(e)
-    })
+  boxes.addEventListener('click', (e) => {
+    console.log(e.target.dataset.cat);
+    goToCategory(e)
+  })
 
 })
 function goToCategory(e) {
-    const datasetCategory = e.target.dataset.cat
+  const datasetCategory = e.target.dataset.cat
 
-    window.location.href = `./category/index.html?cat=${datasetCategory}`;
+  window.location.href = `./category/index.html?cat=${datasetCategory}`;
 }
 
 
 const athenticationOnThSite = (e) => {
+  const checkAuthBtn = e.target.dataset.auth
+
+  userAuthWrapper.innerHTML = ''
+
+  if (checkAuthBtn === 'logIn') {
+
+    userAuthWrapper.insertAdjacentHTML('beforeend',
+      `
+
+            <div class="backdrop-blur"></div>
+
+            <div class="blog_bottom_right user-signup">
+                 <div class="blog_link_wrapper">
+                   <a href="#" class="text-signup">Sign Up</a>
+                   <a href="#" class="text-login">Login</a>
+                 </div>
+
+                 <form action="#" class="form">
+                  
+
+                   <label class="email" for="user_email">E-Mail</label>
+                   <div class="input_email">
+                     <input type="email" name="" id="user_email" placeholder="Enter Your E-Mail">
+                     <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                       <path d="M1.75 0H22.25C23.216 0 24 0.784 24 1.75V15.75C24 16.2141 23.8156 16.6592 23.4874 16.9874C23.1592 17.3156 22.7141 17.5 22.25 17.5H1.75C1.28587 17.5 0.840752 17.3156 0.512563 16.9874C0.184374 16.6592 0 16.2141 0 15.75L0 1.75C0 0.784 0.784 0 1.75 0ZM1.5 4.412V15.75C1.5 15.888 1.612 16 1.75 16H22.25C22.3163 16 22.3799 15.9737 22.4268 15.9268C22.4737 15.8799 22.5 15.8163 22.5 15.75V4.412L12.98 10.845C12.388 11.245 11.612 11.245 11.02 10.845L1.5 4.412ZM1.5 1.75V2.602L11.86 9.602C11.9013 9.62994 11.9501 9.64488 12 9.64488C12.0499 9.64488 12.0987 9.62994 12.14 9.602L22.5 2.602V1.75C22.5 1.6837 22.4737 1.62011 22.4268 1.57322C22.3799 1.52634 22.3163 1.5 22.25 1.5H1.75C1.6837 1.5 1.62011 1.52634 1.57322 1.57322C1.52634 1.62011 1.5 1.6837 1.5 1.75Z" fill="white"></path>
+                     </svg>
+                   </div>
+
+
+
+
+
+
+
+
+                   <label class="email" for="pass">Password</label>
+                   <div class="input_email input_password">
+                     <input type="password" name="" id="pass" placeholder="Enter Your Password">
+                     <svg class="show-password-eye" viewBox="-2.8 -2.8 33.60 33.60" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" stroke-width="0.00028">
+                       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                       <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.05600000000000001"></g>
+                       <g id="SVGRepo_iconCarrier">
+                         <path clip-rule="evenodd" d="M17.7469 15.4149C17.9855 14.8742 18.1188 14.2724 18.1188 14.0016C18.1188 11.6544 16.2952 9.7513 14.046 9.7513C11.7969 9.7513 9.97332 11.6544 9.97332 14.0016C9.97332 16.3487 12.0097 17.8886 14.046 17.8886C15.3486 17.8886 16.508 17.2515 17.2517 16.2595C17.4466 16.0001 17.6137 15.7168 17.7469 15.4149ZM14.046 15.7635C14.5551 15.7635 15.0205 15.5684 15.3784 15.2457C15.81 14.8566 16 14.2807 16 14.0016C16 12.828 15.1716 11.8764 14.046 11.8764C12.9205 11.8764 12 12.8264 12 14C12 14.8104 12.9205 15.7635 14.046 15.7635Z" fill="#ffffff" fill-rule="evenodd"></path>
+                         <path clip-rule="evenodd" d="M1.09212 14.2724C1.07621 14.2527 1.10803 14.2931 1.09212 14.2724C0.96764 14.1021 0.970773 13.8996 1.09268 13.7273C1.10161 13.7147 1.11071 13.7016 1.11993 13.6882C4.781 8.34319 9.32105 5.5 14.0142 5.5C18.7025 5.5 23.2385 8.33554 26.8956 13.6698C26.965 13.771 27 13.875 27 13.9995C27 14.1301 26.9593 14.2399 26.8863 14.3461C23.2302 19.6702 18.6982 22.5 14.0142 22.5C9.30912 22.5 4.75717 19.6433 1.09212 14.2724ZM3.93909 13.3525C3.6381 13.7267 3.6381 14.2722 3.93908 14.6465C7.07417 18.5443 10.6042 20.3749 14.0142 20.3749C17.4243 20.3749 20.9543 18.5443 24.0894 14.6465C24.3904 14.2722 24.3904 13.7267 24.0894 13.3525C20.9543 9.45475 17.4243 7.62513 14.0142 7.62513C10.6042 7.62513 7.07417 9.45475 3.93909 13.3525Z" fill="#ffffff" fill-rule="evenodd"></path>
+                       </g>
+                     </svg>
+
+                     <svg class="hide-password-eye" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                       <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                       <g id="SVGRepo_iconCarrier">
+                         <path clip-rule="evenodd" d="M22.6928 1.55018C22.3102 1.32626 21.8209 1.45915 21.6 1.84698L19.1533 6.14375C17.4864 5.36351 15.7609 4.96457 14.0142 4.96457C9.32104 4.96457 4.781 7.84644 1.11993 13.2641L1.10541 13.2854L1.09271 13.3038C0.970762 13.4784 0.967649 13.6837 1.0921 13.8563C3.79364 17.8691 6.97705 20.4972 10.3484 21.6018L8.39935 25.0222C8.1784 25.4101 8.30951 25.906 8.69214 26.1299L9.03857 26.3326C9.4212 26.5565 9.91046 26.4237 10.1314 26.0358L23.332 2.86058C23.553 2.47275 23.4219 1.97684 23.0392 1.75291L22.6928 1.55018ZM18.092 8.00705C16.7353 7.40974 15.3654 7.1186 14.0142 7.1186C10.6042 7.1186 7.07416 8.97311 3.93908 12.9239C3.63812 13.3032 3.63812 13.8561 3.93908 14.2354C6.28912 17.197 8.86102 18.9811 11.438 19.689L12.7855 17.3232C11.2462 16.8322 9.97333 15.4627 9.97333 13.5818C9.97333 11.2026 11.7969 9.27368 14.046 9.27368C15.0842 9.27368 16.0317 9.68468 16.7511 10.3612L18.092 8.00705ZM15.639 12.3137C15.2926 11.7767 14.7231 11.4277 14.046 11.4277C12.9205 11.4277 12 12.3906 12 13.5802C12 14.3664 12.8432 15.2851 13.9024 15.3624L15.639 12.3137Z" fill="#ffffff" fill-rule="evenodd"></path>
+                         <path d="M14.6873 22.1761C19.1311 21.9148 23.4056 19.0687 26.8864 13.931C26.9593 13.8234 27 13.7121 27 13.5797C27 13.4535 26.965 13.3481 26.8956 13.2455C25.5579 11.2677 24.1025 9.62885 22.5652 8.34557L21.506 10.2052C22.3887 10.9653 23.2531 11.87 24.0894 12.9239C24.3904 13.3032 24.3904 13.8561 24.0894 14.2354C21.5676 17.4135 18.7903 19.2357 16.0254 19.827L14.6873 22.1761Z" fill="#ffffff"></path>
+                       </g>
+                     </svg>
+                   </div>
+
+                  
+
+
+
+
+
+                   <button type="submit">Log In</button>
+                   <div class="or">
+                     <div class="or_left"></div>
+                     <span class="sss">or</span>
+                     <div class="or_right"></div>
+                   </div>
+                   <div class="google">
+                     <img src="img/devicon_google.png" alt="">
+                     <span>Log In With Google</span>
+                   </div>
+                 </form>
+                </div>
+            `
+    )
+
+    document.querySelector('.text-login').classList.add('auth-box-active')
+    document.querySelector('.text-signup').classList.remove('auth-box-active')
+
     userAuthWrapper.style.opacity = 1
     userAuthWrapper.style.visibility = 'visible'
+
+  } else {
+
+    userAuthWrapper.insertAdjacentHTML('beforeend',
+      `
+
+            <div class="backdrop-blur"></div>
+
+            <div class="blog_bottom_right user-signup">
+                 <div class="blog_link_wrapper">
+                   <a href="#" class="text-signup">Sign Up</a>
+                   <a href="#" class="text-login">Login</a>
+                 </div>
+
+                 <form action="#" class="form">
+                   <label class="email" for="user_name">User Name</label>
+                   <div class="input_name">
+                     <input type="text" name="" id="user_name" placeholder="Enter Your User Name">
+                     <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                       <path d="M9 2C7.93913 2 6.92172 2.42143 6.17157 3.17157C5.42143 3.92172 5 4.93913 5 6C5 7.06087 5.42143 8.07828 6.17157 8.82843C6.92172 9.57857 7.93913 10 9 10C10.0609 10 11.0783 9.57857 11.8284 8.82843C12.5786 8.07828 13 7.06087 13 6C13 4.93913 12.5786 3.92172 11.8284 3.17157C11.0783 2.42143 10.0609 2 9 2ZM3 6C3 4.4087 3.63214 2.88258 4.75736 1.75736C5.88258 0.632141 7.4087 0 9 0C10.5913 0 12.1174 0.632141 13.2426 1.75736C14.3679 2.88258 15 4.4087 15 6C15 7.5913 14.3679 9.11742 13.2426 10.2426C12.1174 11.3679 10.5913 12 9 12C7.4087 12 5.88258 11.3679 4.75736 10.2426C3.63214 9.11742 3 7.5913 3 6ZM5 16C4.20435 16 3.44129 16.3161 2.87868 16.8787C2.31607 17.4413 2 18.2044 2 19C2 19.2652 1.89464 19.5196 1.70711 19.7071C1.51957 19.8946 1.26522 20 1 20C0.734784 20 0.48043 19.8946 0.292893 19.7071C0.105357 19.5196 0 19.2652 0 19C0 17.6739 0.526784 16.4021 1.46447 15.4645C2.40215 14.5268 3.67392 14 5 14H13C14.3261 14 15.5979 14.5268 16.5355 15.4645C17.4732 16.4021 18 17.6739 18 19C18 19.2652 17.8946 19.5196 17.7071 19.7071C17.5196 19.8946 17.2652 20 17 20C16.7348 20 16.4804 19.8946 16.2929 19.7071C16.1054 19.5196 16 19.2652 16 19C16 18.2044 15.6839 17.4413 15.1213 16.8787C14.5587 16.3161 13.7956 16 13 16H5Z" fill="white"></path>
+                     </svg>
+                   </div>
+
+                   <label class="email" for="user_email">E-Mail</label>
+                   <div class="input_email">
+                     <input type="email" name="" id="user_email" placeholder="Enter Your E-Mail">
+                     <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                       <path d="M1.75 0H22.25C23.216 0 24 0.784 24 1.75V15.75C24 16.2141 23.8156 16.6592 23.4874 16.9874C23.1592 17.3156 22.7141 17.5 22.25 17.5H1.75C1.28587 17.5 0.840752 17.3156 0.512563 16.9874C0.184374 16.6592 0 16.2141 0 15.75L0 1.75C0 0.784 0.784 0 1.75 0ZM1.5 4.412V15.75C1.5 15.888 1.612 16 1.75 16H22.25C22.3163 16 22.3799 15.9737 22.4268 15.9268C22.4737 15.8799 22.5 15.8163 22.5 15.75V4.412L12.98 10.845C12.388 11.245 11.612 11.245 11.02 10.845L1.5 4.412ZM1.5 1.75V2.602L11.86 9.602C11.9013 9.62994 11.9501 9.64488 12 9.64488C12.0499 9.64488 12.0987 9.62994 12.14 9.602L22.5 2.602V1.75C22.5 1.6837 22.4737 1.62011 22.4268 1.57322C22.3799 1.52634 22.3163 1.5 22.25 1.5H1.75C1.6837 1.5 1.62011 1.52634 1.57322 1.57322C1.52634 1.62011 1.5 1.6837 1.5 1.75Z" fill="white"></path>
+                     </svg>
+                   </div>
+
+
+
+
+
+
+
+
+                   <label class="email" for="pass">Password</label>
+                   <div class="input_email input_password">
+                     <input type="password" name="" id="pass" placeholder="Enter Your Password">
+                     <svg class="show-password-eye" viewBox="-2.8 -2.8 33.60 33.60" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" stroke-width="0.00028">
+                       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                       <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.05600000000000001"></g>
+                       <g id="SVGRepo_iconCarrier">
+                         <path clip-rule="evenodd" d="M17.7469 15.4149C17.9855 14.8742 18.1188 14.2724 18.1188 14.0016C18.1188 11.6544 16.2952 9.7513 14.046 9.7513C11.7969 9.7513 9.97332 11.6544 9.97332 14.0016C9.97332 16.3487 12.0097 17.8886 14.046 17.8886C15.3486 17.8886 16.508 17.2515 17.2517 16.2595C17.4466 16.0001 17.6137 15.7168 17.7469 15.4149ZM14.046 15.7635C14.5551 15.7635 15.0205 15.5684 15.3784 15.2457C15.81 14.8566 16 14.2807 16 14.0016C16 12.828 15.1716 11.8764 14.046 11.8764C12.9205 11.8764 12 12.8264 12 14C12 14.8104 12.9205 15.7635 14.046 15.7635Z" fill="#ffffff" fill-rule="evenodd"></path>
+                         <path clip-rule="evenodd" d="M1.09212 14.2724C1.07621 14.2527 1.10803 14.2931 1.09212 14.2724C0.96764 14.1021 0.970773 13.8996 1.09268 13.7273C1.10161 13.7147 1.11071 13.7016 1.11993 13.6882C4.781 8.34319 9.32105 5.5 14.0142 5.5C18.7025 5.5 23.2385 8.33554 26.8956 13.6698C26.965 13.771 27 13.875 27 13.9995C27 14.1301 26.9593 14.2399 26.8863 14.3461C23.2302 19.6702 18.6982 22.5 14.0142 22.5C9.30912 22.5 4.75717 19.6433 1.09212 14.2724ZM3.93909 13.3525C3.6381 13.7267 3.6381 14.2722 3.93908 14.6465C7.07417 18.5443 10.6042 20.3749 14.0142 20.3749C17.4243 20.3749 20.9543 18.5443 24.0894 14.6465C24.3904 14.2722 24.3904 13.7267 24.0894 13.3525C20.9543 9.45475 17.4243 7.62513 14.0142 7.62513C10.6042 7.62513 7.07417 9.45475 3.93909 13.3525Z" fill="#ffffff" fill-rule="evenodd"></path>
+                       </g>
+                     </svg>
+
+                     <svg class="hide-password-eye" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                       <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                       <g id="SVGRepo_iconCarrier">
+                         <path clip-rule="evenodd" d="M22.6928 1.55018C22.3102 1.32626 21.8209 1.45915 21.6 1.84698L19.1533 6.14375C17.4864 5.36351 15.7609 4.96457 14.0142 4.96457C9.32104 4.96457 4.781 7.84644 1.11993 13.2641L1.10541 13.2854L1.09271 13.3038C0.970762 13.4784 0.967649 13.6837 1.0921 13.8563C3.79364 17.8691 6.97705 20.4972 10.3484 21.6018L8.39935 25.0222C8.1784 25.4101 8.30951 25.906 8.69214 26.1299L9.03857 26.3326C9.4212 26.5565 9.91046 26.4237 10.1314 26.0358L23.332 2.86058C23.553 2.47275 23.4219 1.97684 23.0392 1.75291L22.6928 1.55018ZM18.092 8.00705C16.7353 7.40974 15.3654 7.1186 14.0142 7.1186C10.6042 7.1186 7.07416 8.97311 3.93908 12.9239C3.63812 13.3032 3.63812 13.8561 3.93908 14.2354C6.28912 17.197 8.86102 18.9811 11.438 19.689L12.7855 17.3232C11.2462 16.8322 9.97333 15.4627 9.97333 13.5818C9.97333 11.2026 11.7969 9.27368 14.046 9.27368C15.0842 9.27368 16.0317 9.68468 16.7511 10.3612L18.092 8.00705ZM15.639 12.3137C15.2926 11.7767 14.7231 11.4277 14.046 11.4277C12.9205 11.4277 12 12.3906 12 13.5802C12 14.3664 12.8432 15.2851 13.9024 15.3624L15.639 12.3137Z" fill="#ffffff" fill-rule="evenodd"></path>
+                         <path d="M14.6873 22.1761C19.1311 21.9148 23.4056 19.0687 26.8864 13.931C26.9593 13.8234 27 13.7121 27 13.5797C27 13.4535 26.965 13.3481 26.8956 13.2455C25.5579 11.2677 24.1025 9.62885 22.5652 8.34557L21.506 10.2052C22.3887 10.9653 23.2531 11.87 24.0894 12.9239C24.3904 13.3032 24.3904 13.8561 24.0894 14.2354C21.5676 17.4135 18.7903 19.2357 16.0254 19.827L14.6873 22.1761Z" fill="#ffffff"></path>
+                       </g>
+                     </svg>
+                   </div>
+
+                   <label class="email" for="repeat_password">Repeat Password</label>
+                   <div class="input_email input_password">
+                     <input type="password" name="" id="repeat_password" placeholder="Repeat your password">
+                     <svg class="show-password-eye" viewBox="-2.8 -2.8 33.60 33.60" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" stroke-width="0.00028">
+                       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                       <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.05600000000000001"></g>
+                       <g id="SVGRepo_iconCarrier">
+                         <path clip-rule="evenodd" d="M17.7469 15.4149C17.9855 14.8742 18.1188 14.2724 18.1188 14.0016C18.1188 11.6544 16.2952 9.7513 14.046 9.7513C11.7969 9.7513 9.97332 11.6544 9.97332 14.0016C9.97332 16.3487 12.0097 17.8886 14.046 17.8886C15.3486 17.8886 16.508 17.2515 17.2517 16.2595C17.4466 16.0001 17.6137 15.7168 17.7469 15.4149ZM14.046 15.7635C14.5551 15.7635 15.0205 15.5684 15.3784 15.2457C15.81 14.8566 16 14.2807 16 14.0016C16 12.828 15.1716 11.8764 14.046 11.8764C12.9205 11.8764 12 12.8264 12 14C12 14.8104 12.9205 15.7635 14.046 15.7635Z" fill="#ffffff" fill-rule="evenodd"></path>
+                         <path clip-rule="evenodd" d="M1.09212 14.2724C1.07621 14.2527 1.10803 14.2931 1.09212 14.2724C0.96764 14.1021 0.970773 13.8996 1.09268 13.7273C1.10161 13.7147 1.11071 13.7016 1.11993 13.6882C4.781 8.34319 9.32105 5.5 14.0142 5.5C18.7025 5.5 23.2385 8.33554 26.8956 13.6698C26.965 13.771 27 13.875 27 13.9995C27 14.1301 26.9593 14.2399 26.8863 14.3461C23.2302 19.6702 18.6982 22.5 14.0142 22.5C9.30912 22.5 4.75717 19.6433 1.09212 14.2724ZM3.93909 13.3525C3.6381 13.7267 3.6381 14.2722 3.93908 14.6465C7.07417 18.5443 10.6042 20.3749 14.0142 20.3749C17.4243 20.3749 20.9543 18.5443 24.0894 14.6465C24.3904 14.2722 24.3904 13.7267 24.0894 13.3525C20.9543 9.45475 17.4243 7.62513 14.0142 7.62513C10.6042 7.62513 7.07417 9.45475 3.93909 13.3525Z" fill="#ffffff" fill-rule="evenodd"></path>
+                       </g>
+                     </svg>
+
+                     <svg class="hide-password-eye" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                       <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                       <g id="SVGRepo_iconCarrier">
+                         <path clip-rule="evenodd" d="M22.6928 1.55018C22.3102 1.32626 21.8209 1.45915 21.6 1.84698L19.1533 6.14375C17.4864 5.36351 15.7609 4.96457 14.0142 4.96457C9.32104 4.96457 4.781 7.84644 1.11993 13.2641L1.10541 13.2854L1.09271 13.3038C0.970762 13.4784 0.967649 13.6837 1.0921 13.8563C3.79364 17.8691 6.97705 20.4972 10.3484 21.6018L8.39935 25.0222C8.1784 25.4101 8.30951 25.906 8.69214 26.1299L9.03857 26.3326C9.4212 26.5565 9.91046 26.4237 10.1314 26.0358L23.332 2.86058C23.553 2.47275 23.4219 1.97684 23.0392 1.75291L22.6928 1.55018ZM18.092 8.00705C16.7353 7.40974 15.3654 7.1186 14.0142 7.1186C10.6042 7.1186 7.07416 8.97311 3.93908 12.9239C3.63812 13.3032 3.63812 13.8561 3.93908 14.2354C6.28912 17.197 8.86102 18.9811 11.438 19.689L12.7855 17.3232C11.2462 16.8322 9.97333 15.4627 9.97333 13.5818C9.97333 11.2026 11.7969 9.27368 14.046 9.27368C15.0842 9.27368 16.0317 9.68468 16.7511 10.3612L18.092 8.00705ZM15.639 12.3137C15.2926 11.7767 14.7231 11.4277 14.046 11.4277C12.9205 11.4277 12 12.3906 12 13.5802C12 14.3664 12.8432 15.2851 13.9024 15.3624L15.639 12.3137Z" fill="#ffffff" fill-rule="evenodd"></path>
+                         <path d="M14.6873 22.1761C19.1311 21.9148 23.4056 19.0687 26.8864 13.931C26.9593 13.8234 27 13.7121 27 13.5797C27 13.4535 26.965 13.3481 26.8956 13.2455C25.5579 11.2677 24.1025 9.62885 22.5652 8.34557L21.506 10.2052C22.3887 10.9653 23.2531 11.87 24.0894 12.9239C24.3904 13.3032 24.3904 13.8561 24.0894 14.2354C21.5676 17.4135 18.7903 19.2357 16.0254 19.827L14.6873 22.1761Z" fill="#ffffff"></path>
+                       </g>
+                     </svg>
+                   </div>
+
+
+
+
+
+                   <button type="submit">Sign Up</button>
+                   <div class="or">
+                     <div class="or_left"></div>
+                     <span class="sss">or</span>
+                     <div class="or_right"></div>
+                   </div>
+                   <div class="google">
+                     <img src="img/devicon_google.png" alt="">
+                     <span>Sign Up With Google</span>
+                   </div>
+                 </form>
+                </div>
+            `
+    )
+
+    document.querySelector('.text-login').classList.remove('auth-box-active')
+    document.querySelector('.text-signup').classList.add('auth-box-active')
+    userAuthWrapper.style.opacity = 1
+    userAuthWrapper.style.visibility = 'visible'
+  }
 }
 
+// * Submit Btns
+signUp.addEventListener('click', athenticationOnThSite)
+logIn.addEventListener('click', athenticationOnThSite)
+document.querySelectorAll('.login-btn-mobile').forEach(items => {
+  items.addEventListener('click', athenticationOnThSite)
+})
 
 
 
 SearchFilterGameBtn.addEventListener('click', filtredGames)
 window.addEventListener('keypress', (event) => {
-    if (event.code === 'Enter') {
-        filtredGames()
-    }
+  if (event.code === 'Enter') {
+    filtredGames()
+  }
 })
 
 
-signUp.addEventListener('click', athenticationOnThSite)
-logIn.addEventListener('click', athenticationOnThSite)
 
 
-
-
+// * Eye Icon Inputs Handler 
 document.querySelectorAll('.input_password').forEach(wrapper => {
-    const input = wrapper.querySelector('input');
-    const hideIcon = wrapper.querySelector('.hide-password-eye');
-    const showIcon = wrapper.querySelector('.show-password-eye');
+  const input = wrapper.querySelector('input');
+  const hideIcon = wrapper.querySelector('.hide-password-eye');
+  const showIcon = wrapper.querySelector('.show-password-eye');
 
-    hideIcon.addEventListener('click', () => {
-        input.type = 'text';
-        hideIcon.style.display = 'none';
-        showIcon.style.display = 'block';
-    });
+  hideIcon.addEventListener('click', () => {
+    input.type = 'text';
+    hideIcon.style.display = 'none';
+    showIcon.style.display = 'block';
+  });
 
-    showIcon.addEventListener('click', () => {
-        input.type = 'password';
-        showIcon.style.display = 'none';
-        hideIcon.style.display = 'block';
-    });
+  showIcon.addEventListener('click', () => {
+    input.type = 'password';
+    showIcon.style.display = 'none';
+    hideIcon.style.display = 'block';
+  });
 });
-backdropBlurElem.addEventListener('click', () => {
-    document.getElementById('auth-box-wrapper').style.opacity = 0
-    document.getElementById('auth-box-wrapper').style.visibility = 'hidden'
-})
 
-document.querySelector('.login-btn').addEventListener('click',()=>{
-    athenticationOnThSite()
-})
+
+document.body.addEventListener("click", function (event) {
+  const backdrop = event.target.closest(".backdrop-blur");
+  if (backdrop) {
+    userAuthWrapper.style.opacity = 0
+    userAuthWrapper.style.visibility = 'hidden'
+  }
+});
+
+
+
+
